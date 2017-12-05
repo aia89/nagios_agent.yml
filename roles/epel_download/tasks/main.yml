@@ -1,0 +1,5 @@
+---
+# tasks file for epel_download
+- package:
+    name: epel-release
+    state: installed

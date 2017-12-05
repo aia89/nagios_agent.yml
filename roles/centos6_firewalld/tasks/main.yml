@@ -1,0 +1,6 @@
+---
+# tasks file for centos6.firewalld
+- service:
+    name: iptables
+    state: stopped
+    enabled: no

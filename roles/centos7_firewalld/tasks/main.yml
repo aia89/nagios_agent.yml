@@ -1,0 +1,6 @@
+---
+# tasks file for /etc/ansible/roles/centos7_firewalld
+- systemd:
+    name: firewalld
+    state: stopped 
+    enabled: no 

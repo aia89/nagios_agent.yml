@@ -1,0 +1,8 @@
+---
+# tasks file for /etc/ansible/roles/iptables_enable
+- service:
+    name: iptables
+    state: started
+- service: 
+    name: iptables
+    state: enabled

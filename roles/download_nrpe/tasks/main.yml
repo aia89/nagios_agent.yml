@@ -1,0 +1,18 @@
+---
+# tasks file for download_nrpe
+- yum: name={{ item }} state=present
+  with_items:
+    - nrpe
+    - nagios-plugins-load
+    - nagios-plugins-nrpe
+    - nagios-plugins-uptime
+    - nagios-plugins-swap
+    - nagios-plugins-procs
+    - nagios-plugins-users
+    - nagios-plugins-disk
+    - nagios-plugins-tcp
+    - libsemanage-python
+- service: 
+    name: nrpe
+    state: restarted
+    enabled: yes

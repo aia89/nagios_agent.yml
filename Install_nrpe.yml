@@ -1,0 +1,12 @@
+---
+- hosts: nagios 
+  roles: 
+    - { role: centos6_firewalld, when: ansible_distribution_major_version == '6' }
+    - { role: centos7_firewalld, when: ansible_distribution_major_version == '7' }
+    - epel_download
+    - download_nrpe
+    - template_nrpe
+
+  tasks:
+    - name: restart NRPE
+      service: name=nrpe state=restarted
